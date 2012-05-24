@@ -1,9 +1,11 @@
 CC=g++
-LDFLAGS=
+AR=ar
+ARFLAGS=
 CXXFLAGS=-Iinclude -I../GPP/include
+OBJECTS=../obj/NLPState.o ../obj/NLPEngine.o
 
-.PHONY: all
-all: ../obj/NLPEngine.o ../obj/NLPState.o
+../lib/libNLP.a: $(OBJECTS)
+	$(AR) rcs ../lib/libNLP.a $(OBJECTS) $(ARFLAGS)
 
 ../obj/NLPState.o: NLPState.cpp include/NLPState.hpp
 	$(CC) $(CXXFLAGS) -o ../obj/NLPState.o -c NLPState.cpp

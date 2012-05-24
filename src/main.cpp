@@ -17,7 +17,7 @@ int main(int argc, char**argv)
 		getline(std::cin, inbuf, '\n');
 		nlpEngine->parseLine(inbuf);
 		gppEngine->update(nlpEngine->getState());
-		std::cout << gppEngine->generateResponse() << '\n';
+		std::cout << gppEngine->generateResponse() << "\n";
 	}
 	
 	delete nlpEngine;
