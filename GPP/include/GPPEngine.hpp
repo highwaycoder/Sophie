@@ -4,15 +4,15 @@
 #include "NLPState.hpp"
 
 class GPPEngine {
-	private:
-		GPPEmotionalState emotionalState;
-		
-		
-	public:
-		GPPEngine();
-		~GPPEngine();
-		void update(NLPState nlpState);
-		std::string generateResponse(void);
+private:
+  GPPEmotionalState emotionalState;
+  
+  
+public:
+  GPPEngine();
+  ~GPPEngine();
+  void update(NLPState nlpState);
+  std::string generateResponse(void);
 };
 
 #endif
