@@ -1,7 +1,7 @@
 CC=g++
 AR=ar
 ARFLAGS=
-CXXFLAGS=-Iinclude -I../NLP/include
+CXXFLAGS=-Iinclude -I../NLP/include -Wall
 OBJECTS=../obj/GPPEngine.o ../obj/GPPEmotionalState.o
 
 debug: CXXFLAGS += -g

@@ -1,7 +1,7 @@
 CC=g++
 AR=ar
 ARFLAGS=
-CXXFLAGS=-Iinclude -I../GPP/include
+CXXFLAGS=-Iinclude -I../GPP/include -Wall
 OBJECTS=../obj/NLPState.o ../obj/NLPEngine.o
 
 debug: CXXFLAGS += -g
