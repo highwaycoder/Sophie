@@ -2,10 +2,10 @@
 
 NLPState::NLPState(void)
 {
-	
+
 }
 
 NLPState::~NLPState(void)
 {
-	
+
 }

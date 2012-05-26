@@ -5,7 +5,7 @@
 class NLPEngine {
 private:
   bool running;
-  NLPState state;
+  NLPState* state;
   
 public:
   NLPEngine(void);

@@ -5,11 +5,12 @@
 NLPEngine::NLPEngine(void)
 {
   running = false;
+  state = new NLPState();
 }
 
 NLPEngine::~NLPEngine(void)
 {
-  
+  delete state;
 }
 
 bool NLPEngine::isRunning() 
@@ -20,12 +21,15 @@ bool NLPEngine::isRunning()
 void NLPEngine::parseLine(std::string line)
 {
   if(line == "exit" || line == "quit")
+  {
+    state->stopping = true;
     stop();
+  }
 }
 
 NLPState NLPEngine::getState()
 {
-  
+  return *state;
 }
 
 void NLPEngine::start(void)

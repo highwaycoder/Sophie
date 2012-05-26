@@ -5,7 +5,7 @@
 
 class GPPEngine {
 private:
-  GPPEmotionalState emotionalState;
+  GPPEmotionalState* emotionalState;
   
   
 public:

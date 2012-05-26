@@ -3,10 +3,11 @@
 
 class NLPState
 {
-	private:
-	public:
-		NLPState();
-		~NLPState();
+private:
+public:
+  bool stopping;
+  NLPState();
+  ~NLPState();
 };
 
 
