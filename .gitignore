@@ -4,6 +4,12 @@
 bin/*
 obj/*
 lib/*
+release_file
+debug_file
+GPP/release_file
+GPP/debug_file
+NLP/release_file
+NLP/debug_file
 
 #################
 ## Kate
