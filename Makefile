@@ -35,10 +35,10 @@ release_file:
 $(PROGNAME): $(OBJECTS) | bin obj lib
 	$(LD) -o bin/$(PROGNAME) $(OBJECTS) $(LDFLAGS)
 
-lib/libGPP.a: | lib
+lib/libGPP.a: GPP/*.cpp GPP/include/*.hpp | lib
 	$(MAKE) -C GPP/ $(GPP_TARGET)
 
-lib/libNLP.a: | lib
+lib/libNLP.a: NLP/*.cpp NLP/include/*.hpp | lib
 	$(MAKE) -C NLP/ $(NLP_TARGET)
 	
 obj/main.o: src/main.cpp | bin obj
