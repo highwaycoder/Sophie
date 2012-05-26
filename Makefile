@@ -17,7 +17,7 @@ default:
 debug: CXXFLAGS += -g
 debug: NLP_TARGET = debug
 debug: GPP_TARGET = debug
-debug: debug_file $(PROGNAME)
+debug: debug_file bin/$(PROGNAME)
 
 # if debug_file doesn't exist, the previous build was release
 debug_file:
@@ -26,13 +26,13 @@ debug_file:
 
 # pseudo-target for a 'release mode' build
 .PHONY: release
-release: release_file $(PROGNAME)
+release: release_file bin/$(PROGNAME)
 
 release_file:
 	$(MAKE) clean
 	touch release_file
 
-$(PROGNAME): $(OBJECTS) | bin obj lib
+bin/$(PROGNAME): $(OBJECTS) | bin obj lib
 	$(LD) -o bin/$(PROGNAME) $(OBJECTS) $(LDFLAGS)
 
 lib/libGPP.a: GPP/*.cpp GPP/include/*.hpp | lib
@@ -45,8 +45,8 @@ obj/main.o: src/main.cpp | bin obj
 	$(CC) $(CXXFLAGS) -o obj/main.o -c src/main.cpp
 	
 .PHONY: test	
-test: test.input $(PROGNAME)
-	$(PROGNAME) < test.input
+test: test.input bin/$(PROGNAME)
+	bin/$(PROGNAME) < test.input
 	
 # directory-making targets
 obj:
